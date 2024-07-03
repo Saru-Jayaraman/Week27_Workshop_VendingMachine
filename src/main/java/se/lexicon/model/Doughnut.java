@@ -1,32 +1,58 @@
 package se.lexicon.model;
 
-public class Doughnut extends Product {
+public class Doughnut implements Product {
 
-    private final boolean isSyrupUsed;
+    private final int id;
+    private double price;
+    private String productName;
     private final DoughnutSize size;
+    private final boolean isSyrupUsed;
 
-    public Doughnut(DoughnutSize size, boolean isSyrupUsed) {
-        super(size.getLabel(), size.getPrice());
-        this.isSyrupUsed = isSyrupUsed;
+    public Doughnut(int id, DoughnutSize size, boolean isSyrupUsed) {
         this.size = size;
+        this.id = id;
+        setProductName(size.getLabel());
+        setPrice(size.getPrice());
+        this.isSyrupUsed = isSyrupUsed;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getProductName() {
+        return productName;
     }
 
     public boolean isSyrupUsed() {
         return isSyrupUsed;
     }
 
-    @Override
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setProductName(String productName) {
+        if (productName == null || productName.trim().isEmpty()) {
+            throw new IllegalArgumentException("ProductName is either null or empty");
+        }
+        this.productName = productName;
+    }
+
     public String examine() {
         return "";
     }
 
-    @Override
     public String use() {
         return "";
     }
 
-    @Override
     public String getDescription() {
-        return super.getDescription() + " IsSyrupUsed: " + isSyrupUsed();
+        return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice()
+                + " IsSyrupUsed: " + isSyrupUsed();
     }
 }

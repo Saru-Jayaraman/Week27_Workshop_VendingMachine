@@ -1,40 +1,20 @@
 package se.lexicon.model;
 
-public abstract class Product {
-    private static int lastId = 0;
-    private final int id;
-    private final double price;
-    private String productName;
+public interface Product {
 
-    public Product(String productName, double price) {
-        this.id = ++lastId;
-        setProductName(productName);
-        this.price = price;
-    }
+    int getId();
 
-    public int getId() {
-        return id;
-    }
+    double getPrice();
 
-    public double getPrice() {
-        return price;
-    }
+    String getProductName();
 
-    public String getProductName() {
-        return productName;
-    }
+    void setPrice(double price);
 
-    public void setProductName(String productName) {
-        if (productName == null || productName.trim().isEmpty()) {
-            throw new IllegalArgumentException("ProductName is either null or empty");
-        }
-        this.productName = productName;
-    }
+    void setProductName(String productName);
 
-    public abstract String examine();
-    public abstract String use();
+    String examine();
 
-    public String getDescription() {
-        return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice();
-    }
+    String use();
+
+    String getDescription();
 }
