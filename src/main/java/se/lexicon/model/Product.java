@@ -2,7 +2,7 @@ package se.lexicon.model;
 
 public abstract class Product {
     private static int lastId = 0;
-    private int id;
+    private final int id;
     private final double price;
     private String productName;
 

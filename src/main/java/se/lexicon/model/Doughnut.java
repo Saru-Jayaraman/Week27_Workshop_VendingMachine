@@ -3,11 +3,12 @@ package se.lexicon.model;
 public class Doughnut extends Product {
 
     private final boolean isSyrupUsed;
-    private DoughnutSize size;
+    private final DoughnutSize size;
 
     public Doughnut(DoughnutSize size, boolean isSyrupUsed) {
         super(size.getLabel(), size.getPrice());
         this.isSyrupUsed = isSyrupUsed;
+        this.size = size;
     }
 
     public boolean isSyrupUsed() {

@@ -2,8 +2,8 @@ package se.lexicon.model;
 
 public class IceCream extends Product {
 
-    private IceCreamFlavour flavour;
-    private IceCreamType type;
+    private final IceCreamFlavour flavour;
+    private final IceCreamType type;
     private final boolean isToppingsAdded;
 
     public IceCream(IceCreamFlavour flavour, IceCreamType type, boolean isToppingsAdded) {
@@ -12,10 +12,6 @@ public class IceCream extends Product {
         this.flavour = flavour;
         this.type = type;
         this.isToppingsAdded = isToppingsAdded;
-    }
-
-    public boolean isToppingsAdded() {
-        return isToppingsAdded;
     }
 
     @Override
