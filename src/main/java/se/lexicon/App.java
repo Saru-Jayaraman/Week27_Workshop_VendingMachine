@@ -25,8 +25,9 @@ public class App
         }
 
         VendingMachineImpl vendingMachine = new VendingMachineImpl(products);
-        int currency = 200;
+        int currency = 10;
         vendingMachine.addCurrency(currency);
+
         System.out.println("======================================");
         System.out.println("Deposit pool after adding currency: " + vendingMachine.getDepositPool());
 
@@ -36,8 +37,8 @@ public class App
         System.out.println("======================================");
         String[] productDescriptionArray = vendingMachine.getProducts();
 
-        System.out.println("Bought product details:");
-        System.out.println("-----------------------");
+        System.out.println("Bought and not bought product details:");
+        System.out.println("--------------------------------------");
         for (String productDescription : productDescriptionArray) {
             System.out.println(productDescription);
         }
