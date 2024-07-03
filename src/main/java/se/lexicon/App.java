@@ -17,7 +17,7 @@ public class App
         Doughnut doughnut1 = new Doughnut(DoughnutSize.MAX, true);
         Doughnut doughnut2 = new Doughnut(DoughnutSize.MINI, false);
 
-        Product[] products = new Product[]{candy1, candy2, iceCream1, iceCream2,iceCream3, doughnut1, doughnut2};
+        Product[] products = new Product[]{candy1, candy2, iceCream1, iceCream2, iceCream3, doughnut1, doughnut2};
         System.out.println("List of Products:");
         System.out.println("=================");
         for (Product product : products) {
@@ -25,7 +25,7 @@ public class App
         }
 
         VendingMachineImpl vendingMachine = new VendingMachineImpl(products);
-        int currency = 200;
+        int currency = 100;
         vendingMachine.addCurrency(currency);
         System.out.println("======================================");
         System.out.println("Deposit pool after adding currency: " + vendingMachine.getDepositPool());
@@ -36,8 +36,8 @@ public class App
         System.out.println("======================================");
         String[] productDescriptionArray = vendingMachine.getProducts();
 
-        System.out.println("Bought product details:");
-        System.out.println("-----------------------");
+        System.out.println("Bought and not bought product details:");
+        System.out.println("--------------------------------------");
         for (String productDescription : productDescriptionArray) {
             System.out.println(productDescription);
         }
