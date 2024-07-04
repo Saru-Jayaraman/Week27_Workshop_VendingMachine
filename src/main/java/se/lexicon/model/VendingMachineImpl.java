@@ -93,6 +93,7 @@ public class VendingMachineImpl implements IVendingMachine{
 
     @Override
     public int endSession() {
+        depositPool = 0;
         return depositPool;
     }
 
