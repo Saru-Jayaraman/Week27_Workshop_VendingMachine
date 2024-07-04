@@ -17,16 +17,16 @@ public class Doughnut extends Product {
 
     @Override
     public String examine() {
-        return "";
+        return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice();
     }
 
     @Override
     public String use() {
-        return "";
+        return " IsSyrupUsed: " + isSyrupUsed();
     }
 
     @Override
     public String getDescription() {
-        return super.getDescription() + " IsSyrupUsed: " + isSyrupUsed();
+        return examine() + use();
     }
 }

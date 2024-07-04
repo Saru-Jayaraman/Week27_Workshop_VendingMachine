@@ -16,20 +16,20 @@ public class IceCream extends Product {
 
     @Override
     public String examine() {
-        return "";
+        return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice();
     }
 
     @Override
     public String use() {
-        return "";
-    }
-
-    @Override
-    public String toString() {
-        return super.getDescription() + " IceCream{" +
+        return " IceCream{" +
                 "flavour=" + flavour +
                 ", type=" + type +
                 ", isToppingsAdded=" + isToppingsAdded +
                 '}';
+    }
+
+    @Override
+    public String getDescription() {
+        return examine() + use();
     }
 }
