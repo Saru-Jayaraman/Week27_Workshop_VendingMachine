@@ -41,24 +41,22 @@ public class IceCream implements Product {
         this.productName = productName;
     }
 
+    @Override
     public String examine() {
-        return "";
-    }
-
-    public String use() {
-        return "";
-    }
-
-    public String getDescription() {
         return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice();
     }
 
-    public String toString() {
-        return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice() +
-                " IceCream{" +
+    @Override
+    public String use() {
+        return " IceCream{" +
                 "flavour=" + flavour +
                 ", type=" + type +
                 ", isToppingsAdded=" + isToppingsAdded +
                 '}';
+    }
+
+    @Override
+    public String getDescription() {
+        return examine() + use();
     }
 }

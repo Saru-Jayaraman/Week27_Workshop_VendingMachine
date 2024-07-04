@@ -41,16 +41,18 @@ public class Candy implements Product {
         this.productName = productName;
     }
 
+    @Override
     public String examine() {
-        return "";
+        return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice();
     }
 
+    @Override
     public String use() {
-        return "";
+        return " Candy type: " + getType();
     }
 
+    @Override
     public String getDescription() {
-        return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice() +
-                " Candy type: " + getType();
+        return examine() + use();
     }
 }

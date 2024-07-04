@@ -43,16 +43,19 @@ public class Doughnut implements Product {
         this.productName = productName;
     }
 
+    @Override
     public String examine() {
-        return "";
+        return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice();
     }
 
+    @Override
     public String use() {
-        return "";
+        return " IsSyrupUsed: " + isSyrupUsed();
     }
 
+    @Override
     public String getDescription() {
-        return "Product Id: " + getId() + " Product Name: " + getProductName() + " Price: " + getPrice()
-                + " IsSyrupUsed: " + isSyrupUsed();
+        return examine() + use();
     }
+
 }
